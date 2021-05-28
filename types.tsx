@@ -12,6 +12,8 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   Home: undefined;
   Orders: undefined;
+  Recipes: undefined;
+  ShoppingList: undefined;
 };
 
 export type HomeParamList = {
@@ -20,4 +22,12 @@ export type HomeParamList = {
 
 export type OrderParamList = {
   OrderScreen: undefined;
+};
+
+export type RecipeParamList = {
+  RecipeScreen: undefined;
+};
+
+export type ShoppingParamList = {
+  ShoppingListScreen: undefined;
 };

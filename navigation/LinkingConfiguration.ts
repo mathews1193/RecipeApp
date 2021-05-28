@@ -24,7 +24,17 @@ export default {
           },
           Role: {
             screens: {
-              RoleScreen: 'two',
+              RoleScreen: 'three',
+            },
+          },
+          Recipe: {
+            screens: {
+              RecipeScreen: 'four',
+            },
+          },
+          Shopping: {
+            screens: {
+              ShoppingListScreen: 'five',
             },
           },
         },

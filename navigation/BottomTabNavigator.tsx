@@ -12,7 +12,9 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/HomeScreen';
 import Order from '../screens/OrderScreen';
-import { BottomTabParamList, HomeParamList, OrderParamList } from '../types';
+import ShoppingList from '../screens/ShoppingList';
+import Recipe from '../screens/RecipeScreen';
+import { BottomTabParamList, HomeParamList, OrderParamList, RecipeParamList, ShoppingParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -34,7 +36,21 @@ export default function BottomTabNavigator() {
         name="Orders"
         component={OrderNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Ionicons name="ios-basket-outline" size={34} color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="ios-basket-sharp" size={34} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Recipes"
+        component={RecipeNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <Ionicons name="ios-clipboard-sharp" size={34} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="ShoppingList"
+        component={ShoppingNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <Ionicons name="ios-cart-sharp" size={34} color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -74,5 +90,33 @@ function OrderNavigator() {
         options={{ headerTitle: 'Orders' }}
       />
     </OrderStack.Navigator>
+  );
+}
+
+const RecipeStack = createStackNavigator<RecipeParamList>();
+
+function RecipeNavigator() {
+  return (
+    <RecipeStack.Navigator>
+      <RecipeStack.Screen
+        name="RecipeScreen"
+        component={Recipe}
+        options={{ headerTitle: 'Recipes' }}
+      />
+    </RecipeStack.Navigator>
+  );
+}
+
+const ShoppingStack = createStackNavigator<ShoppingParamList>();
+
+function ShoppingNavigator() {
+  return (
+    <ShoppingStack.Navigator>
+      <ShoppingStack.Screen
+        name="ShoppingListScreen"
+        component={ShoppingList}
+        options={{ headerTitle: 'Orders' }}
+      />
+    </ShoppingStack.Navigator>
   );
 }
