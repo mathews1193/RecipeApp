@@ -22,6 +22,11 @@ export default {
               OrderScreen: 'two',
             },
           },
+          Role: {
+            screens: {
+              RoleScreen: 'two',
+            },
+          },
         },
       },
       NotFound: '*',
