@@ -8,19 +8,22 @@ const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
     Name: "Lex Luther",
-    room: "Room 1001",
+    type: "Delivery",
+    date:"5-29-21",
     hasQuestion: 1,
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
     Name: "Arya Stark",
-    room: "Room 1002",
+    type: "Pick-Up",
+    date:"09-14-19",
     hasQuestion: 1,
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
     Name: "Jean Grey",
-    room: "Room 3003",
+    type: "Curbside",
+    date:"12-23-20",
     hasQuestion: 0,
   },
 ];
@@ -29,7 +32,7 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <Fragment>
     <TouchableOpacity onPress={onPress} style={[styles.item]}>
     <View style={[styles.view]}>
-      <Text style={[styles.title, textColor]}>{item.room} {item.Name}</Text>
+      <Text style={[styles.title, textColor]}>{item.Name} {item.type} {item.date}</Text>
       {item.hasQuestion > 0 && <Text style={[styles.noti]}> ! </Text> }
       </View>
     </TouchableOpacity>
