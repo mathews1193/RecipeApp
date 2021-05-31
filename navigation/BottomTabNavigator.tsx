@@ -115,7 +115,7 @@ function ShoppingNavigator() {
       <ShoppingStack.Screen
         name="ShoppingListScreen"
         component={ShoppingList}
-        options={{ headerTitle: 'Orders' }}
+        options={{ headerTitle: 'Shopping List' }}
       />
     </ShoppingStack.Navigator>
   );
