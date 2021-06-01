@@ -10,36 +10,45 @@ const DATA = [
     Name: "Lex Luther",
     type: "Delivery",
     date:"5-29-21",
-    hasQuestion: 1,
+    time: "9:50am",
+    city:"Smallville",
+    state:"California",
   },
   {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
     Name: "Arya Stark",
     type: "Pick-Up",
     date:"09-14-19",
-    hasQuestion: 1,
+    time: "1:30pm",
+    city:"San Franciso",
+    state:"California",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
     Name: "Jean Grey",
     type: "Curbside",
     date:"12-23-20",
-    hasQuestion: 0,
+    time: "11:20am",
+    city:"Salem Center",
+    state:"New York",
   },
 ];
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <Fragment>
-    <TouchableOpacity onPress={onPress} style={[styles.item]}>
     <View style={[styles.view]}>
-      <Text style={[styles.title, textColor]}>{item.Name} {item.type} {item.date}</Text>
-      {item.hasQuestion > 0 && <Text style={[styles.noti]}> ! </Text> }
+      <Text style={[styles.title, textColor]}>Name: {item.Name}</Text>
+      <Text style={[styles.title, textColor]}>Delivery Type: {item.type}</Text> 
+      <Text style={[styles.title, textColor]}>Date: {item.date}</Text>
+      <Text style={[styles.title, textColor]}>Time: {item.time}</Text>
+      <Text style={[styles.title, textColor]}>City: {item.city}</Text>
+      <Text style={[styles.title, textColor]}>State: {item.state}</Text>
       </View>
-    </TouchableOpacity>
+
       <View
       style={{
         borderBottomColor: 'black',
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
       }}
     />
   </Fragment>
@@ -69,7 +78,6 @@ export default function OrderScreen( { navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text style={styles.title}>My Orders</Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -85,7 +93,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: "white",
   },
   item: {
@@ -94,19 +101,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   title: {
-    fontSize: 16,
-  },
-  noti: {
-    fontSize: 16,
-    color: "red",
-    textAlign: 'right',
-    alignSelf: "flex-end",
-  },
-  logo: {
-    marginBottom: 30,
-    width: 100,
-    height: 100,
-    resizeMode: 'stretch',
+    fontSize: 20,
+    flexDirection: "column",
   },
   separator: {
     marginVertical: 2,
@@ -114,6 +110,9 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   view: {
-    flexDirection: "row",
+    marginVertical:5,
+    width:300,
+    padding:15,
+    backgroundColor:'#d0d9d9',
   }
 });
