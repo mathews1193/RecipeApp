@@ -13,7 +13,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/HomeScreen';
 import Order from '../screens/OrderScreen';
 import ShoppingList from '../screens/ShoppingList';
-import Recipe from '../screens/RecipeScreen';
+import Recipe from '../screens/RecipeHomeScreen';
 import { BottomTabParamList, HomeParamList, OrderParamList, RecipeParamList, ShoppingParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
