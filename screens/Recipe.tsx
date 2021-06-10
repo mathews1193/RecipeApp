@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         fontSize:25,
     },
     image: {
-        height:280,
+        height:290,
         width:'100%',
         borderRadius: 10,
       },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fafffb",
         borderTopLeftRadius:10,
         borderTopRightRadius:10,
-        height:'80%',
+        height:'40%',
         width:'100%',
         borderWidth: 1,
     },
